@@ -2,7 +2,8 @@ package chapter3.making.decisions;
 
 public class SwitchExample {
 
-    public static String swithExpressionWithPatternMatching(Number height) {
+    public static String switchExpressionWithPatternMatching(Number height)
+    {
         //example for switch expression with Pattern Matching
         return switch (height) {
             case Integer i -> "Rounded: " + i;
@@ -11,7 +12,8 @@ public class SwitchExample {
         };
     }
 
-    public static String switchExpressionWithYield(int fish, int length) {
+    public static String switchExpressionWithYield(int fish, int length)
+    {
         //switch expression must be exhaustive
         //it means all cases have to covered
         return switch (fish) {

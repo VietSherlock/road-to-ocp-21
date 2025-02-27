@@ -2,6 +2,8 @@ package chapter3.making.decisions;
 
 public class SwitchExample {
 
+    private SwitchExample() {}
+
     public static String switchExpressionWithPatternMatching(Number height)
     {
         //example for switch expression with Pattern Matching

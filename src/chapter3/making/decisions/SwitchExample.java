@@ -2,7 +2,12 @@ package chapter3.making.decisions;
 
 public class SwitchExample {
 
-    private SwitchExample() {}
+    public static void main(String[] args)
+    {
+        switchExpressionWithYield(5, 9);
+        switchExpressionWithPatternMatching(null);
+        switchStatementWithCaseNull();
+    }
 
     public static void switchStatementWithCaseNull()
     {

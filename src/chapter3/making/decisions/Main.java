@@ -4,7 +4,8 @@ public class Main {
 
     public static void main(String[] args)
     {
-        System.out.println(SwitchExample.switchExpressionWithYield(5, 9));
-        System.out.println(SwitchExample.switchExpressionWithPatternMatching(1.2));
+        SwitchExample.switchExpressionWithYield(5, 9);
+        SwitchExample.switchExpressionWithPatternMatching(null);
+        SwitchExample.switchStatementWithCaseNull();
     }
 }

@@ -5,14 +5,55 @@ public class LoopExample {
     public static void main(String[] args)
     {
         //        forLoopWithMultipleTerms();
-        nestedLoop();
+        //        nestedLoop();
+        //        labelWithBreak();
+        labelWithContinue();
     }
 
-    //[Label]
+    private static void labelWithContinue()
+    {
+        CLEANING:
+        for (char stable = 'a'; stable <= 'd'; stable++) {
+            for (int leopard = 1; leopard <= 3; leopard++) {
+                if (stable == 'b' || leopard == 2) {
+                    continue CLEANING;  //clean first leopard in each stable but stable 'b'
+                    //                    continue; //skip cleaning leopards in stable 'b' and the second leopard in each stable
+                }
+                System.out.printf("Cleaning: %c,%d %n", stable, leopard);
+            }
+        }
+    }
+
+    //[LABEL]
     //A label is an optional pointer to the head of a statement that allows the application flow to jump to it or break from it.
     //if, switch, loops statement can have label as optional
+    private static void labelWithBreak()
+    {
+        int[][] twoDimensionalArr = {{1, 10}, {5, 2}, {2, 2}};
+        int searchValue = 2;
+        int positionX = -1;
+        int positionY = -1;
 
-    //[NOTES] A nested loop is a loop that contains another loop
+        PARENT_LOOP:
+        for (int i = 0; i < twoDimensionalArr.length; i++) {
+            for (int j = 0; j < twoDimensionalArr[i].length; j++) {
+                if (twoDimensionalArr[i][j] == 2) {
+                    positionX = i;
+                    positionY = j;
+                    break PARENT_LOOP;  //break with label can help break outer loop
+                    //                    break;    // break without label only break inner loop
+                }
+            }
+        }
+
+        if (positionX == -1 || positionY == -1) {
+            System.out.print("Value " + searchValue + " not found");
+        } else {
+            System.out.print("Value " + searchValue + " found at: " + "(" + positionX + "," + positionY + ")");
+        }
+    }
+
+    //[NESTED LOOP] A nested loop is a loop that contains another loop
     // including while, do/while, for, for-each
     private static void nestedLoop()
     {
@@ -24,7 +65,7 @@ public class LoopExample {
             for (int i : mySimpleArr) {
                 //            for (int i = 0; i < mySimpleArr.length; i++) {
                 if (i == 2) {
-                    break;  //break only terminate the nearest inner loop; not terminate all loops
+                    break;  //break only terminate the nearest inner loop; not able to terminate outer loops
                 }
                 System.out.print(i + "\t");
                 //                System.out.print(mySimpleArr[i] + "\t");

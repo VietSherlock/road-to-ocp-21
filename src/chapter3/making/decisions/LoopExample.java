@@ -1,13 +1,36 @@
 package chapter3.making.decisions;
 
 public class LoopExample {
-
+    
     public static void main(String[] args)
     {
         //        forLoopWithMultipleTerms();
         //        nestedLoop();
         //        labelWithBreak();
-        labelWithContinue();
+        //        labelWithContinue();
+
+        int[][] matrix = {{1, 10}, {5, 2}, {2, 2}};
+        int searchValue = 2;
+        int[] results = searchForValue(matrix, searchValue);
+
+        if (results != null) {
+            System.out.printf("Value %d found at: (%d, %d)", searchValue, results[0], results[1]);
+        } else {
+            System.out.printf("Value %d not found.", searchValue);
+        }
+    }
+
+    private static int[] searchForValue(int[][] inputMatrix, int v)
+    {
+        for (int i = 0; i < inputMatrix.length; i++) {
+            for (int j = 0; j < inputMatrix[i].length; j++) {
+                if (inputMatrix[i][j] == v) {
+                    return new int[]{i, j}; //return statements can be used to exit loops quickly
+                    // v = 1; // code placed immediately after return, break, continue in the same block is considered unreachable and will not compile
+                }
+            }
+        }
+        return null;
     }
 
     private static void labelWithContinue()

@@ -1,6 +1,6 @@
 package chapter3.making.decisions;
 
-public class LoopExample {
+public class LoopExercise {
     
     public static void main(String[] args)
     {
@@ -9,15 +9,17 @@ public class LoopExample {
         //        labelWithBreak();
         //        labelWithContinue();
 
-        int[][] matrix = {{1, 10}, {5, 2}, {2, 2}};
-        int searchValue = 2;
-        int[] results = searchForValue(matrix, searchValue);
-
-        if (results != null) {
-            System.out.printf("Value %d found at: (%d, %d)", searchValue, results[0], results[1]);
-        } else {
-            System.out.printf("Value %d not found.", searchValue);
-        }
+//        int[][] matrix = {{1, 10}, {5, 2}, {2, 2}};
+//        int searchValue = 2;
+//        int[] results = searchForValue(matrix, searchValue);
+//
+//        if (results != null) {
+//            System.out.printf("Value %d found at: (%d, %d)", searchValue, results[0], results[1]);
+//        } else {
+//            System.out.printf("Value %d not found.", searchValue);
+//        }
+        String[] list = " : ".split(":");
+        System.out.println(list);
     }
 
     private static int[] searchForValue(int[][] inputMatrix, int v)

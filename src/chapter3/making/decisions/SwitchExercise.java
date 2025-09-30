@@ -1,6 +1,6 @@
 package chapter3.making.decisions;
 
-public class SwitchExample {
+public class SwitchExercise {
 
     public static void main(String[] args)
     {
